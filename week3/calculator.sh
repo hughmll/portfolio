@@ -7,7 +7,9 @@ MULTIPLY="*"
 DIVIDE="/"
 
 #output colour codes stored in variables for cleaner looking calc function.
-BLUE="\033[0;34m"
+
+LIGHTBLUE="\033[1;34m"
+ORANGE="\033[0;33m"
 GREEN="\033[0;32m"
 RED="\033[0;31m"
 PURPLE="\033[0;35m"
@@ -15,15 +17,15 @@ RESET="\033[0m"
 
 
 calc() {
-  read -p "Enter first integer: " INT1 #takes first number from user.
+  read -p "$(echo -e ${LIGHTBLUE}Enter first integer: ${RESET})" INT1 #takes first number from user.
   read -p "Enter operation to perform (+, -, * or /): " OP #takes operation to perform.
-  read -p "Enter second integer: " INT2 #takes second number from user.
+  read -p "$(echo -e ${LIGHTBLUE}Enter second integer: ${RESET})" INT2 #takes second number from user.
 
   case $OP in #uses case statement to determine which operation to perform.
    "+")
 
   RESULT=$(($INT1 $OP $INT2))
-  echo -e ${BLUE}$RESULT${RESET};;
+  echo -e ${LIGHTBLUE}$RESULT${RESET};;
 
   "-")
   RESULT=$(($INT1 $OP $INT2))
@@ -34,7 +36,7 @@ calc() {
   echo -e ${RED}$RESULT${RESET};;
 
   "/")
-  awk "BEGIN {printf \"%.2f\n\", $INT1/$INT2}";; #used awk to perform a floating point division to within 2 decimal places.
+  echo -e ${PURPLE}$(awk "BEGIN {printf \"%.2f\n\", $INT1/$INT2}")${RESET};; #used awk to perform a floating point division to within 2 decimal places.
 
   esac
 
