@@ -20,4 +20,4 @@ read -s -p "Please enter a secret password: " password
 
 #removes newline character from variable (to prevent it being included)
 #and hashes password using sha512 function and outputs to text file
-echo -n $password | sha512sum > secret_password.txt
+echo -n $password | sha512sum > secret.txt
