@@ -12,10 +12,10 @@
  read -p "$1: " #Creates prompt for user input after printing first arg
  while (($REPLY != 42)); do # While loop if user input != 42
  	if (($REPLY < 42)); then
- 		printError "Too Low"
+ 		printError "Too Low!"
  		read -p "$1: " 
  	elif (($REPLY > 42)); then
- 		printError "Too High"
+ 		printError "Too High!"
  		read -p "$1: "
  	fi
  done
@@ -23,4 +23,4 @@
  
  echo "This is the start of the script"
  getNumber "Please type a number between 1 and 100"
- echo "You guessed correctly!" # Prints when while loop is closed thanks to successful guess
+ echo "Right!" # Prints when while loop is closed thanks to successful guess
