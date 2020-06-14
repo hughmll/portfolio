@@ -15,6 +15,6 @@ if [ -d $folderName ]; then
 else
 #print an error
 echo
-echo -e ${RED}I couldn't find that folder${RESET}
+echo -e "${RED}I couldn't find that folder${RESET}"
 fi
 exit 0 
